@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,4 +12,6 @@
 |
 */
 
+//PostControllerの中のindexを実行する
 Route::get('/posts', 'PostController@index');
+Route::get('/posts/{post}', 'PostController@show');
