@@ -17,3 +17,5 @@ Route::get('/posts', 'PostController@index');//PostControllerの中のindexを�
 Route::get('/posts/create', 'PostController@create');//画面を表示するためのルーティングの追加
 Route::post('/posts', 'PostController@store');//ブログ投稿作成実行用のルーティングの追加
 Route::get('/posts/{post}', 'PostController@show');
+Route::get('/posts/{post}/edit', 'PostController@edit');
+Route::put('/posts/{post}', 'PostController@update');
