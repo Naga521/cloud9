@@ -8,10 +8,12 @@
     </head>
     <body>
         <h1>Blog Name</h1>
+         
         <div class='posts'>
             @foreach ($posts as $post)
+          
                 <div class='post'>
-                    <a href='/posts/{{ $post->id}}'></a><h2 class='title'>{{ $post->title }}</h2>
+                    <a href='/posts/{{ $post->id}}'><h2 class='title'>{{ $post->title }}</h2></a>
                     <p class='body'>{{ $post->body }}</p>
                 </div>
             @endforeach
@@ -19,5 +21,13 @@
          <div class='paginate'>
             {{ $posts->links() }}
         </div>
+         <script>
+            function deletePost(e) {
+                'use strict';
+                if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
+                document.getElementById('form_delete').submit();
+               }
+            }
+        </script>
     </body>
 </html>
