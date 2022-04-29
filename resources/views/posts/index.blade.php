@@ -21,13 +21,6 @@
          <div class='paginate'>
             {{ $posts->links() }}
         </div>
-         <script>
-            function deletePost(e) {
-                'use strict';
-                if (confirm('削除すると復元できません。\n本当に削除しますか？')) {
-                document.getElementById('form_delete').submit();
-               }
-            }
-        </script>
+         
     </body>
 </html>
