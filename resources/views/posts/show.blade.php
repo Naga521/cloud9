@@ -9,6 +9,8 @@
     <body>
         <h1>Blog Name</h1>
            <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
+            <a href="">{{ $post->category->name }}</a>
+             <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
              <form action="/posts/{{ $post->id }}" id="form_delete" method="post" style="display:inline">
                     @csrf
                     @method('DELETE')
@@ -20,8 +22,7 @@
                     <p class='updateed_at'>{{ $post->updateed_at }}</p>
                     </div>
                     <div class='back'>[<a href='/posts'>back</a>]</div>
-       
-    </body>
+       　　　</body>
     <script>
             function deletePost(e) {
                 'use strict';

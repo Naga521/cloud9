@@ -13,6 +13,7 @@
 */
 
 //PostControllerの中のindexを実行する
+Route::get('/categories/{category}', 'CategoryController@index');
 Route::get('/', 'PostController@index');
 Route::get('/posts', 'PostController@index');
 Route::get('/posts/create','PostController@create');

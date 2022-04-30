@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Http\Requests\PostRequest; // useする
+use App\Category;
 
 class PostController extends Controller
 {
@@ -16,13 +17,7 @@ class PostController extends Controller
     {
         return view('posts/show')->with(['post' => $post]);
     }
-
-    public function create()
-    {
-        return view('posts/create');
-    }
-
-    public function store(Post $post, PostRequest $request) // 引数をRequest->PostRequestにする
+        public function store(Post $post, PostRequest $request) // 引数をRequest->PostRequestにする
     //データベースへ保存
     {
         $input = $request['post'];
@@ -45,5 +40,10 @@ public function delete(Post $post)
 {
     $post->delete();
     return redirect('/');
+}
+
+public function create(Category $category)
+{
+    return view('posts/create')->with(['categories' => $category->get()]);;
 }
 }
