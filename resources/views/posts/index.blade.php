@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+@extends('layouts.app')
+
+@section('content')
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -7,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
+        {{Auth::user()->name}}
         <h1>Blog Name</h1>
         [<a href='/posts/create'>create</a>]
         <div class='posts'>
@@ -25,3 +29,4 @@
          
     </body>
 </html>
+@endsection

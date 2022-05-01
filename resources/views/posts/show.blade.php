@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+@extends('layouts.app')
+
+@section('content')
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -9,7 +12,7 @@
     <body>
         <h1>Blog Name</h1>
            <p class="edit">[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
-            <a href="">{{ $post->category->name }}</a>
+            {{-- <a href="">{{ $post->category->name }}</a> --}}
              <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
              <form action="/posts/{{ $post->id }}" id="form_delete" method="post" style="display:inline">
                     @csrf
@@ -32,3 +35,4 @@
             }
         </script>
 </html>
+@endsection
